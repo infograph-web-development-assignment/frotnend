@@ -2,6 +2,7 @@ import Main from "./components/Main";
 import Header from "./components/Header";
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Favorite from "./components/Favorite";
 class App extends React.Component {
   render() {
     return (
@@ -13,7 +14,9 @@ class App extends React.Component {
             <Route exact path='/'>
               <Main />
             </Route>
-
+            <Route exact path='/favorites'>
+              <Favorite />
+            </Route>
           </Switch>
         </BrowserRouter>
       </>
