@@ -7,10 +7,10 @@ class Main extends Component {
     super(props);
     this.state = {
       apiData: [],
-      server:process.env.REACT_APP_SERVER
+      server: process.env.REACT_APP_SERVER,
     };
   }
-
+  // to render all data from the api
   componentDidMount = async () => {
     const url = "https://digimon-api.vercel.app/api/digimon";
     const result = await axios.get(url);
@@ -18,11 +18,11 @@ class Main extends Component {
       apiData: result.data,
     });
   };
-
-  addToFav = async (data)=>{
-    const adder = await axios.post(`${this.state.server}/addToFav`,data);
+  // Send the data to backend to save it in the database
+  addToFav = async (data) => {
+    const adder = await axios.post(`${this.state.server}/addToFav`, data);
     console.log("wowjejrksejsjerj");
-  }
+  };
 
   render() {
     return (
@@ -34,7 +34,7 @@ class Main extends Component {
               name={element.name}
               img={element.img}
               level={element.level}
-              addToFav = {this.addToFav}
+              addToFav={this.addToFav}
             />
           );
         })}
