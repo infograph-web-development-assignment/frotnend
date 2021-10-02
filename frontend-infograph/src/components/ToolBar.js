@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { Component } from "react";
 import { Nav, Navbar, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -53,7 +51,12 @@ class ToolBar extends Component {
                 src='https://pngset.com/images/website-logo-background-clipart-background-website-logo-sphere-astronomy-outer-space-universe-transparent-png-1309368.png'
                 style={{ width: "20px", height: "20px" }}
               />{" "}
-              <select style={{ color: "white", background: "#082032", border:'none' }}>
+              <select
+                style={{
+                  color: "white",
+                  background: "#082032",
+                  border: "none",
+                }}>
                 <option value='English'>English</option>
                 <option value='Arabic'>Arabic</option>
                 <option value='French'>French</option>

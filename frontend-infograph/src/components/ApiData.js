@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card} from 'react-bootstrap';
+import {Card, Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 class ApiData extends Component {
     render() {
@@ -14,7 +14,14 @@ class ApiData extends Component {
                         <Card.Text>
                             {this.props.level}
                         </Card.Text>
+
+                        <Button variant="primary" onClick={()=>this.props.addToFav({name:this.props.name, level:this.props.level, img:this.props.img})}> Add Card To Favorites
+                        </Button>
+
+                        
+                        
                     </Card.Body>
+
                 </Card>
                 </div>
         )

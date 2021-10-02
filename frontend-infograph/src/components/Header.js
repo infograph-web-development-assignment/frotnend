@@ -1,18 +1,19 @@
-import React from "react";
-import { Nav, Navbar, Container } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, { Component } from "react";
 import ToolBar from "./ToolBar";
-import NavBar from './NavBar';
-export default function Header() {
-  return (
-    <>
-      <div>
-        <ToolBar />
-      </div>
-      
-      <div>
-      <NavBar />
-    </div>
-    </>
-  );
+import NavBar from "./NavBar";
+class Header extends Component {
+  render() {
+    return (
+      <>
+        <div>
+          <ToolBar />
+        </div>
+
+        <div>
+          <NavBar />
+        </div>
+      </>
+    );
+  }
 }
+export default Header;
