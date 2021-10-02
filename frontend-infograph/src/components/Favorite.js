@@ -8,6 +8,7 @@ class Favorite extends Component {
     this.state = {
       server: process.env.REACT_APP_SERVER,
       favoritedData: [],
+
     };
   }
 
@@ -22,6 +23,10 @@ class Favorite extends Component {
     // console.log(this.state.favoritedData)
   };
 
+
+
+
+  
   render() {
     return (
       <>
