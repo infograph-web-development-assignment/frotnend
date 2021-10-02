@@ -7,6 +7,7 @@ class Main extends Component {
     super(props);
     this.state = {
       apiData: [],
+      server:process.env.REACT_APP_SERVER
     };
   }
 
@@ -18,6 +19,11 @@ class Main extends Component {
     });
   };
 
+  addToFav = async (data)=>{
+    const adder = await axios.post(`${this.state.server}/addToFav`,data);
+    console.log("wowjejrksejsjerj");
+  }
+
   render() {
     return (
       <>
@@ -28,6 +34,7 @@ class Main extends Component {
               name={element.name}
               img={element.img}
               level={element.level}
+              addToFav = {this.addToFav}
             />
           );
         })}

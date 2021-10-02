@@ -1,7 +1,5 @@
-/** @format */
-
 import React, { Component } from "react";
-import { Nav, Navbar, Container, Button} from "react-bootstrap";
+import { Nav, Navbar, Container, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class NavBar extends Component {
@@ -23,7 +21,7 @@ class NavBar extends Component {
                 <Navbar.Text style={{ marginLeft: "300px" }}>
                   <select style={{ color: "#1DB9C3", border: "none" }}>
                     <option value='Home'>Home</option>
-                    <option value='Favorites'>Favorites</option>
+                    <option value='Second'>Second</option>
                   </select>
                 </Navbar.Text>
 
@@ -55,25 +53,17 @@ class NavBar extends Component {
                   </select>
                 </Navbar.Text>
 
-                <Navbar.Text style={{ padding: "20px"}}>
+                <Navbar.Text style={{ padding: "20px" }}>
                   <b>Contact</b>
                 </Navbar.Text>
 
-
-                <Navbar.Text >
-                {" "}
-                <img
-                  src='https://icon-library.com/images/search-icon-images/search-icon-images-10.jpg'
-                  style={{ width: "20px", height: "25px" }}
-                />{" "}
-              </Navbar.Text>
-
-              
- 
-            
-              
-
-
+                <Navbar.Text>
+                  {" "}
+                  <img
+                    src='https://icon-library.com/images/search-icon-images/search-icon-images-10.jpg'
+                    style={{ width: "20px", height: "25px" }}
+                  />{" "}
+                </Navbar.Text>
               </div>
             </Container>
           </Navbar>
