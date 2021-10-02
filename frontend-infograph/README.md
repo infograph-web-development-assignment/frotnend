@@ -1,6 +1,20 @@
+## To use this app install the following dependencies
+- $ npm i 
+- $ npm i axios dotenv 
+- $ npm i react-bootstrap bootstrap
+- $ npm i react-router-dom
+
+#### To run the server
+- $ npm start 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
+
 
 ## Available Scripts
 
