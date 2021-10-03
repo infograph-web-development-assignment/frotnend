@@ -42,37 +42,31 @@ class Register extends React.Component {
   // to store the value of the user's name
   getName = (event) => {
     this.setState({ name: event.target.value });
-    console.log(this.state.name);
   };
 
   // To store the value of user's username of register form
   getRegisterUsername = (event) => {
     this.setState({ registerUsername: event.target.value });
-    console.log(this.state.registerUsername);
   };
 
   // To store the value of user's email
   getEmail = (event) => {
     this.setState({ email: event.target.value });
-    console.log(this.state.email);
   };
 
   // To store the value of user's register passowrd
   getRegisterPassword = (event) => {
     this.setState({ registerPassword: event.target.value });
-    console.log(this.state.registerPassword);
   };
 
   // To store the value of user's username of login form
   getLoginUsername = (event) => {
     this.setState({ loginUsername: event.target.value });
-    console.log(this.state.loginUsername);
   };
 
   // To store the value of user's passowrd of login form
   getLoginPassword = (event) => {
     this.setState({ loginPassword: event.target.value });
-    console.log(this.state.loginPassword);
   };
 
   loggingIn = (event) => {

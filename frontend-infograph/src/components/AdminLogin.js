@@ -29,7 +29,6 @@ class AdminLogin extends Component {
           <Button
             style={{ padding: "30px" }}
             onClick={this.props.loggingIn}
-            // href="/isauthenticated"
             variant='primary'
             type='submit'>
             Login
@@ -37,7 +36,6 @@ class AdminLogin extends Component {
 
           <Button
             variant='secondary'
-            // onClick={this.props.showRegisterFunc}
             href='/adminregister'
             type='submit'>
             Dont Have an account?

@@ -18,7 +18,7 @@ class NavBar extends Component {
                   />{" "}
                 </Navbar.Text>
 
-                <Navbar.Text style={{ color: "#1DB9C3" }}>
+                <Navbar.Text style={{ padding:'80px' }}>
                   <a href='/isauthenticated'>
                     {" "}
                     <b>Home</b>

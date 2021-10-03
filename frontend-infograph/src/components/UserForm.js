@@ -17,21 +17,18 @@ class UserForm extends Component {
     this.setState({
       projectName: event.target.value,
     });
-    console.log(this.state.projectName);
   };
 
   getDescription = (event) => {
     this.setState({
       description: event.target.value,
     });
-    console.log(this.state.description);
   };
 
   getSector = (event) => {
     this.setState({
       sector: event.target.value,
     });
-    console.log(this.state.sector);
   };
 
   sendFund = async (data) => {
