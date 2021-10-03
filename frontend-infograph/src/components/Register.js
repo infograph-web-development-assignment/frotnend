@@ -1,13 +1,17 @@
+/** @format */
+
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import RegisterForm from "./RegisterForm";
 import Login from "./Login";
-import Authenticated from './Authenticated'
+import Authenticated from "./Authenticated";
+import axios from "axios";
 
 class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      server: process.env.REACT_APP_SERVER,
       name: "",
       registerUsername: "",
       email: "",
@@ -16,7 +20,8 @@ class Register extends React.Component {
       showLogin: false,
       loginUsername: "",
       loginPassword: "",
-      isAuthenticated:false
+      isAuthenticated: false,
+      savedData: "",
     };
   }
 
@@ -36,7 +41,7 @@ class Register extends React.Component {
     });
   };
 
-  // to store the value of the user's name 
+  // to store the value of the user's name
   getName = (event) => {
     this.setState({ name: event.target.value });
     console.log(this.state.name);
@@ -72,7 +77,7 @@ class Register extends React.Component {
     console.log(this.state.loginPassword);
   };
 
-  // To check if the passowrd and username exist and let user in
+
   loggingIn=(event)=>{
     event.preventDefault();
     if (this.state.registerPassword == this.state.loginPassword && this.state.loginUsername == this.state.registerUsername){
@@ -86,6 +91,25 @@ class Register extends React.Component {
     else(alert('Incorrect username and/or passowrd'))
   }
 
+
+  sendFund = async (data) => {
+    const sendTheFund = await axios.post(
+      `${this.state.server}/sendTheFund`,
+      data
+    );
+  };
+
+  SaveProjectOwner = async (data) => {
+    this.setState({
+      showRegister: false,
+      showLogin: true,
+    });
+    const addOwner = await axios.post(
+      `${this.state.server}/savePojectOwner`,
+      data
+    );
+  };
+
   render() {
     return (
       <>
@@ -93,14 +117,14 @@ class Register extends React.Component {
           <div>
             {this.state.showRegister && (
               <RegisterForm
-                name={this.state.name}
                 registerPassword={this.state.registerPassword}
-                email={this.state.email}
                 getName={this.getName}
                 getRegisterPassword={this.getRegisterPassword}
                 getEmail={this.getEmail}
                 getRegisterUsername={this.getRegisterUsername}
                 showLoginFunc={this.showLoginFunc}
+                SaveProjectOwner={this.SaveProjectOwner}
+                registerUsername={this.state.registerUsername}
               />
             )}
           </div>
@@ -114,11 +138,13 @@ class Register extends React.Component {
                 getLoginPassword={this.getLoginPassword}
                 showRegisterFunc={this.showRegisterFunc}
                 loggingIn={this.loggingIn}
+
               />
             )}
           </div>
-              {this.state.isAuthenticated && <Authenticated/>}
-
+          {this.state.isAuthenticated && <Authenticated 
+            sendFund={this.sendFund}
+            />}
         </div>
       </>
     );

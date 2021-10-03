@@ -10,6 +10,7 @@ class Main extends Component {
       server: process.env.REACT_APP_SERVER,
     };
   }
+
   // to render all data from the api
   componentDidMount = async () => {
     const url = "https://digimon-api.vercel.app/api/digimon";

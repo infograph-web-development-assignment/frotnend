@@ -33,6 +33,7 @@ class Login extends Component {
           <Button
             style={{ padding: "30px" }}
             onClick={this.props.loggingIn}
+            // href="/isauthenticated"
             variant='primary'
             type='submit'>
             Login
@@ -40,7 +41,8 @@ class Login extends Component {
 
           <Button
             variant='secondary'
-            onClick={this.props.showRegisterFunc}
+            // onClick={this.props.showRegisterFunc}
+            href="/register"
             type='submit'>
             Dont Have an account?
           </Button>
