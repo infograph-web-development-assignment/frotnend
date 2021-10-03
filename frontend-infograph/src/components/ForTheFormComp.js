@@ -4,7 +4,7 @@ export class ForTheFormComp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      satus: "",
+      status: "",
     };
   }
   statusState = (event) => {

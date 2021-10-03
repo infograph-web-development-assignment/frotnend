@@ -8,7 +8,7 @@ class UserForm extends Component {
       projectName: "",
       description: "",
       sector: "Sector",
-      server: process.env.server,
+      server: process.env.REACT_APP_SERVER,
       status: "pending",
     };
   }
@@ -34,12 +34,12 @@ class UserForm extends Component {
     console.log(this.state.sector);
   };
 
-  // sendFund = async (data) => {
-  //   const sendTheFund = await axios.post(
-  //     `${this.state.server}/sendTheFund`,
-  //     data
-  //   );
-  // };
+  sendFund = async (data) => {
+    const sendTheFund = await axios.post(
+      `${this.state.server}/sendTheFund`,
+      data
+    );
+  };
 
   render() {
     return (
@@ -75,7 +75,7 @@ class UserForm extends Component {
           <Button
             variant='primary'
             onClick={() => {
-              this.props.sendFund({
+              this.sendFund({
                 sector: this.state.sector,
                 projectName: this.state.projectName,
                 description: this.state.description,

@@ -7,7 +7,7 @@ class Authenticated extends React.Component {
     return (
       <>
         <Header />
-        <UserForm sendFund={this.props.sendFund} />
+        <UserForm  />
       </>
     );
   }

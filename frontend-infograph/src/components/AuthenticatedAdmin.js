@@ -11,6 +11,7 @@ class AuthenticatedAdmin extends React.Component {
       server: process.env.REACT_APP_SERVER,
       resultArr: [],
       formState: false,
+      id:''
     };
   }
 
