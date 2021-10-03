@@ -6,6 +6,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import Authenticated from './components/Authenticated'
 import Startup from "./components/Startup";
+import Status from './components/Status'
+import Admin from "./components/Admin";
+import AdminLogin from "./components/AdminLogin";
+import AdminRegister from './components/AdminRegister';
 
 class App extends React.Component {
   render() {
@@ -26,6 +30,22 @@ class App extends React.Component {
             <Register />
           </Route>
 
+          <Route exact path='/status'>
+          <Status />
+        </Route>
+
+        <Route exact path='/admin'>
+        <Admin />
+      </Route>
+
+      <Route exact path='/adminlogin'>
+      <AdminLogin />
+    </Route>
+
+    <Route exact path='/adminregister'>
+    <AdminRegister />
+  </Route>
+        
           
           <Route exact path='/isauthenticated'>
           <Authenticated />

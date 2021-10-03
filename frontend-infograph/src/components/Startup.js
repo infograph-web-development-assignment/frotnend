@@ -9,7 +9,7 @@ class Startup extends Component {
         <>
 
           <Button variant='warning' href='/register'>Project owner account</Button>{" "}
-          <Button variant='danger'>Admin account</Button>{" "}
+          <Button variant='danger' href='/admin'>Admin account</Button>{" "}
 
         </>
       </div>
