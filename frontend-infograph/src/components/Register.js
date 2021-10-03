@@ -1,88 +1,124 @@
 import React from "react";
-import { Form, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import RegisterForm from "./RegisterForm";
+import Login from "./Login";
+import Authenticated from './Authenticated'
+
 class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       name: "",
-      userName: "",
+      registerUsername: "",
       email: "",
-      password: "",
+      registerPassword: "",
+      showRegister: true,
+      showLogin: false,
+      loginUsername: "",
+      loginPassword: "",
+      isAuthenticated:false
     };
   }
 
+  // function to close register form and open login form
+  showLoginFunc = () => {
+    this.setState({
+      showRegister: false,
+      showLogin: true,
+    });
+  };
+
+  // function to close login form and open register form
+  showRegisterFunc = () => {
+    this.setState({
+      showRegister: true,
+      showLogin: false,
+    });
+  };
+
+  // to store the value of the user's name 
   getName = (event) => {
     this.setState({ name: event.target.value });
     console.log(this.state.name);
   };
 
-  getUserName = (event) => {
-    this.setState({ userName: event.target.value });
-    console.log(this.state.userName);
+  // To store the value of user's username of register form
+  getRegisterUsername = (event) => {
+    this.setState({ registerUsername: event.target.value });
+    console.log(this.state.registerUsername);
   };
 
+  // To store the value of user's email
   getEmail = (event) => {
     this.setState({ email: event.target.value });
     console.log(this.state.email);
   };
 
-  getPassword = (event) => {
-    this.setState({ password: event.target.value });
-    console.log(this.state.password);
+  // To store the value of user's register passowrd
+  getRegisterPassword = (event) => {
+    this.setState({ registerPassword: event.target.value });
+    console.log(this.state.registerPassword);
   };
+
+  // To store the value of user's username of login form
+  getLoginUsername = (event) => {
+    this.setState({ loginUsername: event.target.value });
+    console.log(this.state.loginUsername);
+  };
+
+  // To store the value of user's passowrd of login form
+  getLoginPassword = (event) => {
+    this.setState({ loginPassword: event.target.value });
+    console.log(this.state.loginPassword);
+  };
+
+  // To check if the passowrd and username exist and let user in
+  loggingIn=(event)=>{
+    event.preventDefault();
+    if (this.state.registerPassword == this.state.loginPassword && this.state.loginUsername == this.state.registerUsername){
+      this.setState({
+        showRegister:false,
+        showLogin:false,
+        isAuthenticated:true
+      })
+
+    }
+    else(alert('Incorrect username and/or passowrd'))
+  }
 
   render() {
     return (
       <>
         <div>
-          <h2>Register </h2>
-
-          <Form.Group className='mb-3' controlId='formBasicEmail'>
-            <Form.Label>Full Name</Form.Label>
-            <Form.Control
-              type='email'
-              onChange={this.getName}
-              placeholder='Enter your full name'
-            />
-          </Form.Group>
-
-          <Form.Group className='mb-3' controlId='formBasicEmail'>
-            <Form.Label>UserName</Form.Label>
-            <Form.Control
-              type='email'
-              onChange={this.getUserName}
-              placeholder='Enter your Username'
-            />
-          </Form.Group>
-
-          <Form>
-            <Form.Group className='mb-3' controlId='formBasicEmail'>
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type='email'
-                onChange={this.getEmail}
-                placeholder='Enter email'
+          <div>
+            {this.state.showRegister && (
+              <RegisterForm
+                name={this.state.name}
+                registerPassword={this.state.registerPassword}
+                email={this.state.email}
+                getName={this.getName}
+                getRegisterPassword={this.getRegisterPassword}
+                getEmail={this.getEmail}
+                getRegisterUsername={this.getRegisterUsername}
+                showLoginFunc={this.showLoginFunc}
               />
-            </Form.Group>
+            )}
+          </div>
 
-            <Form.Group className='mb-3' controlId='formBasicPassword'>
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type='password'
-                onChange={this.getPassword}
-                placeholder='Password'
+          <div>
+            {this.state.showLogin && (
+              <Login
+                loginUsername={this.state.loginUsername}
+                getLoginUsername={this.getLoginUsername}
+                loginPassword={this.state.loginPassword}
+                getLoginPassword={this.getLoginPassword}
+                showRegisterFunc={this.showRegisterFunc}
+                loggingIn={this.loggingIn}
               />
-            </Form.Group>
+            )}
+          </div>
+              {this.state.isAuthenticated && <Authenticated/>}
 
-            <Button style={{padding:'30px'}} variant='primary' type='submit' >
-              Create Account
-            </Button>
-            
-            <Button  variant='secondary' type='submit' >
-            Already Have an account?
-          </Button>
-          </Form>
         </div>
       </>
     );
