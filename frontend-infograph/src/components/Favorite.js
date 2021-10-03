@@ -24,9 +24,6 @@ class Favorite extends Component {
   };
 
 
-
-
-  
   render() {
     return (
       <>

@@ -14,20 +14,17 @@ class NavBar extends Component {
                   {" "}
                   <img
                     src='https://mail.google.com/mail/u/1?ui=2&ik=6488739f8a&attid=0.2&permmsgid=msg-f:1712335054757495286&th=17c36fa8f34501f6&view=att&disp=safe'
-                    style={{ width: "200px", height: "200px" }}
+                    style={{ width: "150px", height: "120px" }}
                   />{" "}
                 </Navbar.Text>
 
                 
                 
-                <Navbar.Text style={{ marginLeft: "150px" }}>
-                <select style={{ color: "#1DB9C3", border: "none" }}>
-                <option value='Home'>Home</option>
-                <option value='Second'>Second</option>
-                </select>
+                <Navbar.Text style={{color:'#1DB9C3'}}>
+                  <a href="/"> <b>Home</b></a>
                 </Navbar.Text>
                 
-                <Navbar.Text style={{  }}>
+                <Navbar.Text style={{ padding:'20px' }}>
                   <a href="/favorites"> <b>Favorites</b></a>
                 </Navbar.Text>
 
