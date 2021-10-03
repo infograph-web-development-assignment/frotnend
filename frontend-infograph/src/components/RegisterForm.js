@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 
@@ -55,7 +53,7 @@ class RegisterForm extends Component {
           <Button
             variant='secondary'
             // onClick={this.props.showLoginFunc}
-            href="/login"
+            href='/login'
             type='submit'>
             Already Have an account?
           </Button>

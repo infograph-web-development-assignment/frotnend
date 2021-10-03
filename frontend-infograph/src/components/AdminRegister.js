@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 
@@ -52,10 +50,7 @@ class AdminRegisterForm extends Component {
             Create Account
           </Button>
 
-          <Button
-            variant='secondary'
-            href="/adminlogin"
-            type='submit'>
+          <Button variant='secondary' href='/adminlogin' type='submit'>
             Already Have an account?
           </Button>
         </Form>

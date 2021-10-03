@@ -22,7 +22,6 @@ class Main extends Component {
   // Send the data to backend to save it in the database
   addToFav = async (data) => {
     const adder = await axios.post(`${this.state.server}/addToFav`, data);
-
   };
 
   render() {

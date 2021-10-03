@@ -1,5 +1,3 @@
-/** @format */
-
 import axios from "axios";
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
@@ -11,7 +9,7 @@ class UserForm extends Component {
       description: "",
       sector: "Sector",
       server: process.env.server,
-      status:"pending"
+      status: "pending",
     };
   }
 
@@ -76,12 +74,13 @@ class UserForm extends Component {
 
           <Button
             variant='primary'
-            onClick={() => {this.props.sendFund({
+            onClick={() => {
+              this.props.sendFund({
                 sector: this.state.sector,
                 projectName: this.state.projectName,
                 description: this.state.description,
-                status:this.state.status
-              })
+                status: this.state.status,
+              });
             }}>
             Send Funding request
           </Button>
@@ -90,7 +89,5 @@ class UserForm extends Component {
     );
   }
 }
-
-
 
 export default UserForm;
