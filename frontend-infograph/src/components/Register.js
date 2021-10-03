@@ -77,20 +77,19 @@ class Register extends React.Component {
     console.log(this.state.loginPassword);
   };
 
-
-  loggingIn=(event)=>{
+  loggingIn = (event) => {
     event.preventDefault();
-    if (this.state.registerPassword == this.state.loginPassword && this.state.loginUsername == this.state.registerUsername){
+    if (
+      this.state.registerPassword == this.state.loginPassword &&
+      this.state.loginUsername == this.state.registerUsername
+    ) {
       this.setState({
-        showRegister:false,
-        showLogin:false,
-        isAuthenticated:true
-      })
-
-    }
-    else(alert('Incorrect username and/or passowrd'))
-  }
-
+        showRegister: false,
+        showLogin: false,
+        isAuthenticated: true,
+      });
+    } else alert("Incorrect username and/or passowrd");
+  };
 
   sendFund = async (data) => {
     const sendTheFund = await axios.post(
@@ -138,13 +137,12 @@ class Register extends React.Component {
                 getLoginPassword={this.getLoginPassword}
                 showRegisterFunc={this.showRegisterFunc}
                 loggingIn={this.loggingIn}
-
               />
             )}
           </div>
-          {this.state.isAuthenticated && <Authenticated 
-            sendFund={this.sendFund}
-            />}
+          {this.state.isAuthenticated && (
+            <Authenticated sendFund={this.sendFund} />
+          )}
         </div>
       </>
     );

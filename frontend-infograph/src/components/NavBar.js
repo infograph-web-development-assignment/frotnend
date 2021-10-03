@@ -21,11 +21,11 @@ class NavBar extends Component {
                 
                 
                 <Navbar.Text style={{color:'#1DB9C3'}}>
-                  <a href="/"> <b>Home</b></a>
+                  <a href="/isauthenticated"> <b>Home</b></a>
                 </Navbar.Text>
                 
                 <Navbar.Text style={{ padding:'20px' }}>
-                  <a href="/favorites"> <b>Favorites</b></a>
+                  <a href="/status"> <b>Status</b></a>
                 </Navbar.Text>
 
                 <Navbar.Text style={{ padding: "20px" }}>
