@@ -7,8 +7,6 @@ class Login extends Component {
       <div>
         <h2>Login </h2>
 
-
-
         <Form.Group className='mb-3' controlId='formBasicEmail'>
           <Form.Label>Username</Form.Label>
           <Form.Control
@@ -19,8 +17,6 @@ class Login extends Component {
         </Form.Group>
 
         <Form>
- 
-
           <Form.Group className='mb-3' controlId='formBasicPassword'>
             <Form.Label>Password</Form.Label>
             <Form.Control
@@ -42,7 +38,7 @@ class Login extends Component {
           <Button
             variant='secondary'
             // onClick={this.props.showRegisterFunc}
-            href="/register"
+            href='/register'
             type='submit'>
             Dont Have an account?
           </Button>

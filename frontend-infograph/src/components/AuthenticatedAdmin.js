@@ -1,14 +1,16 @@
 import axios from "axios";
 import React, { Component } from "react";
 import Header from "./Header";
+import ForTheFormComp from "./ForTheFormComp";
+import { Card, Button } from "react-bootstrap";
 
-import { Card } from "react-bootstrap";
-class Status extends Component {
+class AuthenticatedAdmin extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       server: process.env.REACT_APP_SERVER,
       resultArr: [],
+      formState: false,
     };
   }
 
@@ -19,6 +21,29 @@ class Status extends Component {
     });
   };
 
+  showUpdateForm = (id) => {
+    this.setState({
+      id: id,
+      formState: true,
+    });
+  };
+
+  closeForm = () => {
+    this.setState({
+      formState: false,
+    });
+  };
+
+  updateStatus = async (data) => {
+    const updated = await axios.put(
+      `${this.state.server}/updateStatus/${this.state.id}`,
+      data
+    );
+    this.setState({
+      resultArr: updated.data,
+      formState: false,
+    });
+  };
   render() {
     return (
       <>
@@ -40,14 +65,28 @@ class Status extends Component {
                   <Card.Text>
                     Project Description: {element.description}
                   </Card.Text>
+                  <Button
+                    variant='primary'
+                    onClick={() => this.showUpdateForm(element._id)}>
+                    Change status
+                  </Button>
                 </Card.Body>
               </Card>
             );
           })}
+
+          <div>
+            {this.state.formState && (
+              <ForTheFormComp
+                updateStatus={this.updateStatus}
+                closeForm={this.closeForm}
+              />
+            )}
+          </div>
         </div>
       </>
     );
   }
 }
 
-export default Status;
+export default AuthenticatedAdmin;

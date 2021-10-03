@@ -18,14 +18,18 @@ class NavBar extends Component {
                   />{" "}
                 </Navbar.Text>
 
-                
-                
-                <Navbar.Text style={{color:'#1DB9C3'}}>
-                  <a href="/isauthenticated"> <b>Home</b></a>
+                <Navbar.Text style={{ color: "#1DB9C3" }}>
+                  <a href='/isauthenticated'>
+                    {" "}
+                    <b>Home</b>
+                  </a>
                 </Navbar.Text>
-                
-                <Navbar.Text style={{ padding:'20px' }}>
-                  <a href="/status"> <b>Status</b></a>
+
+                <Navbar.Text style={{ padding: "20px" }}>
+                  <a href='/status'>
+                    {" "}
+                    <b>Status</b>
+                  </a>
                 </Navbar.Text>
 
                 <Navbar.Text style={{ padding: "20px" }}>

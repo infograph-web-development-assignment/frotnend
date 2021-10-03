@@ -1,10 +1,10 @@
-
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AdminRegister from "./AdminRegister";
 import AdminLogin from "./AdminLogin";
 import Authenticated from "./Authenticated";
 import axios from "axios";
+import AuthenticatedAdmin from "./AuthenticatedAdmin";
 
 class Admin extends React.Component {
     constructor(props) {
@@ -140,7 +140,7 @@ class Admin extends React.Component {
                 )}
               </div>
               {this.state.isAuthenticated && (
-                <Authenticated sendFund={this.sendFund} />
+                <AuthenticatedAdmin sendFund={this.sendFund} />
               )}
             </div>
           </>
