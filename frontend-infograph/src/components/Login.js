@@ -10,7 +10,7 @@ class Login extends Component {
         <Form.Group className='mb-3' controlId='formBasicEmail'>
           <Form.Label>Username</Form.Label>
           <Form.Control
-            type='email'
+            type='text'
             onChange={this.props.getLoginUsername}
             placeholder='Enter your Username'
           />

@@ -101,10 +101,11 @@ class Register extends React.Component {
     );
   };
 
+  
   render() {
     return (
       <>
-        <div>
+        <div style={{backgroundImage:'url(https://i1.wp.com/www.alphr.com/wp-content/uploads/2017/10/what_is_seed_funding-scaled.jpg?zoom=2&resize=738%2C320&ssl=1)',height:'150px', width:'1000px'}}>
           <div>
             {this.state.showRegister && (
               <RegisterForm
