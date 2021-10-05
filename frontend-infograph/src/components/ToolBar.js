@@ -42,7 +42,7 @@ class ToolBar extends Component {
                 <Nav style={{ marginTop: "30px" }}>
                   <a
                     href='https://www.goodreads.com/quotes'
-                    style={{ color: "white", marginTop: -30 }}>
+                    style={{ color: "white", marginTop: -30, textDecoration:'none' }}>
                     Get a Free Quote
                   </a>
                 </Nav>
