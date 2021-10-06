@@ -20,6 +20,7 @@ class Register extends React.Component {
       loginPassword: "",
       isAuthenticated: false,
       savedData: "",
+      allProjectOwners:[]
     };
   }
 
@@ -69,26 +70,49 @@ class Register extends React.Component {
     this.setState({ loginPassword: event.target.value });
   };
 
-  loggingIn = (event) => {
+
+
+
+
+
+
+
+
+
+
+
+  componentDidMount = async () =>{
+    const getProjectOwners = await axios.get(`${this.state.server}/getSavedProjectOwners`);
+    this.setState({
+      allProjectOwners: getProjectOwners.data
+    })
+
+  }
+
+  loggingIn222 = (event) => {
     event.preventDefault();
-    if (
-      this.state.registerPassword == this.state.loginPassword &&
-      this.state.loginUsername == this.state.registerUsername
-    ) {
+    let exist = 'n';
+    this.state.allProjectOwners.map(element=>{
+      if ((this.state.loginPassword === element.password && this.state.loginUsername === element.username) && (this.state.loginUsername!='' && this.state.loginPassword != ''))
+      {
+        exist = 'y'
+        
+      }
+    })
+    if (exist==='y') {
       this.setState({
         showRegister: false,
         showLogin: false,
         isAuthenticated: true,
       });
-    } else alert("Incorrect username and/or passowrd");
-  };
 
-  sendFund = async (data) => {
-    const sendTheFund = await axios.post(
-      `${this.state.server}/sendTheFund`,
-      data
-    );
-  };
+    }
+    else{
+      alert('Incorrect username and/or passowrd ')
+    }
+  }
+
+
 
   SaveProjectOwner = async (data) => {
     this.setState({
@@ -129,12 +153,12 @@ class Register extends React.Component {
                 loginPassword={this.state.loginPassword}
                 getLoginPassword={this.getLoginPassword}
                 showRegisterFunc={this.showRegisterFunc}
-                loggingIn={this.loggingIn}
+                loggingIn={this.loggingIn222}
               />
             )}
           </div>
           {this.state.isAuthenticated && (
-            <Authenticated sendFund={this.sendFund} />
+            <Authenticated />
           )}
         </div>
       </>

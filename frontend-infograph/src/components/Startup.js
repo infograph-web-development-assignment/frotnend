@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Button from "react-bootstrap/Button";
 import StartupHeader from "./StartupHeader";
 class Startup extends Component {
   render() {

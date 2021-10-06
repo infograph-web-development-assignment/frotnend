@@ -36,7 +36,7 @@ class AdminLogin extends Component {
 
           <Button
             variant='secondary'
-            href='/adminregister'
+            href='/admin'
             type='submit'>
             Dont Have an account?
           </Button>

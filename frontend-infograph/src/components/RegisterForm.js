@@ -2,9 +2,7 @@ import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 
 class RegisterForm extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   render() {
     return (
       <div>
@@ -52,8 +50,8 @@ class RegisterForm extends Component {
 
           <Button
             variant='secondary'
-            // onClick={this.props.showLoginFunc}
-            href='/login'
+            onClick={this.props.showLoginFunc}
+            // href='/login'
             type='submit'>
             Already Have an account?
           </Button>
@@ -64,11 +62,3 @@ class RegisterForm extends Component {
 }
 
 export default RegisterForm;
-//   <Form.Group className='mb-3' >
-//     <Form.Label>Email addraasdess</Form.Label>
-//     <Form.Control
-//       type='email'
-//       onChange={this.props.getEmail}
-//       placeholder='Enter emaiaal'
-//     />
-//   </Form.Group>

@@ -1,13 +1,13 @@
+/** @format */
+
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
-
+import ToolBar from "./ToolBar";
 class AdminRegisterForm extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <div>
+        <ToolBar />
         <h2> Admin Register </h2>
         <Form>
           <Form.Group className='mb-3' controlId='formBasicText'>
@@ -40,7 +40,7 @@ class AdminRegisterForm extends Component {
           <Button
             style={{ padding: "30px" }}
             onClick={() => {
-              this.props.SaveProjectOwner({
+              this.props.SaveAdmin({
                 username: this.props.registerUsername,
                 password: this.props.registerPassword,
               });
@@ -50,7 +50,10 @@ class AdminRegisterForm extends Component {
             Create Account
           </Button>
 
-          <Button variant='secondary' href='/adminlogin' type='submit'>
+          <Button
+            variant='secondary'
+            onClick={this.props.showLoginFunc}
+            type='submit'>
             Already Have an account?
           </Button>
         </Form>

@@ -13,7 +13,7 @@ class ToolBar extends Component {
                 <Navbar.Text style={{ color: "white", padding: "20px" }}>
                   {" "}
                   <img
-                    src='https://www.pngkey.com/png/full/963-9630209_blue-location-icon-png.png'
+                    src='https://www.pngkey.com/png/full/963-9630209_blue-location-icon-png.png' alt=''
                     style={{ width: "20px", height: "20px" }}
                   />{" "}
                   2 Queen Street, USA
@@ -22,7 +22,7 @@ class ToolBar extends Component {
                 <Navbar.Text style={{ color: "white", padding: "20px" }}>
                   {" "}
                   <img
-                    src='https://www.pngkey.com/png/full/105-1051476_call-us-black-phone-logo-transparent.png'
+                    src='https://www.pngkey.com/png/full/105-1051476_call-us-black-phone-logo-transparent.png' alt=''
                     style={{ width: "20px", height: "20px" }}
                   />{" "}
                   888 666 000
@@ -31,7 +31,7 @@ class ToolBar extends Component {
                 <Navbar.Text style={{ color: "white", padding: "20px" }}>
                   {" "}
                   <img
-                    src='http://www.newdesignfile.com/postpic/2013/04/blue-email-envelope-icon_296775.png'
+                    src='http://www.newdesignfile.com/postpic/2013/04/blue-email-envelope-icon_296775.png' alt=''
                     style={{ width: "20px", height: "20px" }}
                   />{" "}
                   info@example.com
@@ -48,7 +48,7 @@ class ToolBar extends Component {
                 </Nav>
               </Navbar.Collapse>
               <img
-                src='https://pngset.com/images/website-logo-background-clipart-background-website-logo-sphere-astronomy-outer-space-universe-transparent-png-1309368.png'
+                src='https://pngset.com/images/website-logo-background-clipart-background-website-logo-sphere-astronomy-outer-space-universe-transparent-png-1309368.png' alt=''
                 style={{ width: "20px", height: "20px" }}
               />{" "}
               <select

@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { Component } from "react";
+import React from "react";
 import Header from "./Header";
 import ForTheFormComp from "./ForTheFormComp";
 import { Card, Button } from "react-bootstrap";
