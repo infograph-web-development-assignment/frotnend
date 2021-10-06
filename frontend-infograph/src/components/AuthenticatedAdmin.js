@@ -50,6 +50,7 @@ class AuthenticatedAdmin extends React.Component {
 
 
         <div>
+        
           <div className='row' >
           {this.state.resultArr.map((element) => {
             return (

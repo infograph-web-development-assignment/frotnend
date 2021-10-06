@@ -21,7 +21,7 @@ class Status extends Component {
     return (
       <>
         <div>
-          <div className='row'>
+          <div className='row' className='align-items-stretch'>
             {this.state.resultArr.map((element) => {
               return (
                 <div className='col' style={{ padding: "10px" }}>

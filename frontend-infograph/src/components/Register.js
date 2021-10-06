@@ -8,7 +8,7 @@ import Footer from "./Footer";
 import NavBar from "./NavBar";
 import Status from "./Status";
 import UserForm from "./UserForm";
-
+// import { useJwt } from "react-jwt"; 
 class Register extends React.Component {
   constructor(props) {
     super(props);
