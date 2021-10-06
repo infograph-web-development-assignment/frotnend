@@ -1,10 +1,7 @@
-/** @format */
-
 import React from "react";
 import Register from "./components/Register";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
-import Authenticated from "./components/Authenticated";
 import Startup from "./components/Startup";
 import Status from "./components/Status";
 import Admin from "./components/Admin";

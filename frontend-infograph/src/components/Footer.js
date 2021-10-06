@@ -4,7 +4,6 @@ import './Footer.css'
   render() {
     return (
       <>
-        <title>Untitled</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"></link>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css"></link>
         <link rel="stylesheet" href="assets/css/style.css"></link>
@@ -18,7 +17,7 @@ import './Footer.css'
             <li className="list-inline-item"><a href="#">Terms</a></li>
             <li className="list-inline-item"><a href="#">Privacy Policy</a></li>
           </ul>
-          <p className="copyright">SeedingFund © 2021</p>
+          <p className="copyright">SeedingFund© 2021</p>
         </div>
       </>
     );

@@ -1,6 +1,5 @@
 import axios from "axios";
 import React from "react";
-import Header from "./Header";
 import ForTheFormComp from "./ForTheFormComp";
 import { Card, Button } from "react-bootstrap";
 
@@ -48,14 +47,13 @@ class AuthenticatedAdmin extends React.Component {
   render() {
     return (
       <>
-        <div>
-          <Header />
-        </div>
+
 
         <div>
-          <h2>Data status</h2>
+          <div className='row' >
           {this.state.resultArr.map((element) => {
             return (
+              <div className='col' style={{padding:'10px'}}>
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Project name: {element.projectName}</Card.Title>
@@ -67,15 +65,16 @@ class AuthenticatedAdmin extends React.Component {
                     Project Description: {element.description}
                   </Card.Text>
                   <Button
-                    variant='primary'
+                    variant='primary' style={{width:'100%'}}
                     onClick={() => this.showUpdateForm(element._id)}>
                     Change status
                   </Button>
                 </Card.Body>
               </Card>
+              </div>
             );
           })}
-
+          </div>
           <div>
             {this.state.formState && (
               <ForTheFormComp
