@@ -1,13 +1,15 @@
+/** @format */
+
 import React from "react";
 import Register from "./components/Register";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
-import Authenticated from './components/Authenticated'
+import Authenticated from "./components/Authenticated";
 import Startup from "./components/Startup";
-import Status from './components/Status'
+import Status from "./components/Status";
 import Admin from "./components/Admin";
 import AdminLogin from "./components/AdminLogin";
-import AdminRegister from './components/AdminRegister';
+import AdminRegister from "./components/AdminRegister";
 
 class App extends React.Component {
   render() {
@@ -15,7 +17,6 @@ class App extends React.Component {
       <>
         <BrowserRouter>
           <Switch>
-
             <Route exact path='/'>
               <Startup />
             </Route>
@@ -25,29 +26,28 @@ class App extends React.Component {
             </Route>
 
             <Route exact path='/register'>
-            <Register />
-          </Route>
+              <Register />
+            </Route>
 
-          <Route exact path='/status'>
-          <Status />
-        </Route>
+            <Route exact path='/status'>
+              <Status />
+            </Route>
 
-        <Route exact path='/admin'>
-        <Admin />
-      </Route>
+            <Route exact path='/admin'>
+              <Admin />
+            </Route>
 
-      <Route exact path='/adminlogin'>
-      <AdminLogin />
-    </Route>
+            <Route exact path='/adminlogin'>
+              <AdminLogin />
+            </Route>
 
-    <Route exact path='/adminregister'>
-    <AdminRegister />
-  </Route>
-        
-          
-          <Route exact path='/isauthenticated'>
-          <Authenticated />
-        </Route>
+            <Route exact path='/adminregister'>
+              <AdminRegister />
+            </Route>
+
+            <Route exact path='/isauthenticated'>
+              <Authenticated />
+            </Route>
           </Switch>
         </BrowserRouter>
       </>

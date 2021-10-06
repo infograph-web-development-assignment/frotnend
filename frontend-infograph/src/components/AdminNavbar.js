@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Navbar, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-class NavBar extends Component {
+class AdminNavbar extends Component {
   render() {
     return (
       <>
@@ -79,4 +79,4 @@ class NavBar extends Component {
     );
   }
 }
-export default NavBar;
+export default AdminNavbar;

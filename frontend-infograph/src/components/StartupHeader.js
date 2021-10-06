@@ -20,7 +20,7 @@ class StartupHeader extends Component {
                 <Navbar.Text style={{  padding:'220px' }}>
                   {" "}
                   <img
-                    src='https://mail.google.com/mail/u/1?ui=2&ik=6488739f8a&attid=0.2&permmsgid=msg-f:1712335054757495286&th=17c36fa8f34501f6&view=att&disp=safe'
+                    src='https://mail.google.com/mail/u/1?ui=2&ik=6488739f8a&attid=0.2&permmsgid=msg-f:1712335054757495286&th=17c36fa8f34501f6&view=att&disp=safe' alt=''
                     style={{ width: "100%", height: "100%" }}
                   />{" "}
                 </Navbar.Text>

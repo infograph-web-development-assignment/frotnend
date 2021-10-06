@@ -2,7 +2,6 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AdminRegister from "./AdminRegister";
 import AdminLogin from "./AdminLogin";
-import Authenticated from "./Authenticated";
 import axios from "axios";
 import AuthenticatedAdmin from "./AuthenticatedAdmin";
 
@@ -21,6 +20,7 @@ class Admin extends React.Component {
           loginPassword: "",
           isAuthenticated: false,
           savedData: "",
+          allAdmins:[]
         };
       }
     
@@ -70,37 +70,86 @@ class Admin extends React.Component {
         this.setState({ loginPassword: event.target.value });
       };
     
+      // loggingIn = (event) => {
+      //   event.preventDefault();
+      //   if (
+      //     this.state.registerPassword === this.state.loginPassword &&
+      //     this.state.loginUsername === this.state.registerUsername
+      //   ) {
+      //     this.setState({
+      //       showRegister: false,
+      //       showLogin: false,
+      //       isAuthenticated: true,
+      //     });
+      //   } else alert("Incorrect username and/or passowrd");
+      // };
+
+
+
+
+      SaveAdmin = async (data) => {
+        this.setState({
+          showRegister: false,
+          showLogin: true,
+        });
+        const addAdmin = await axios.post(
+          `${this.state.server}/saveAdmin`,
+          data
+        );
+      };
+
+      
+
+      componentDidMount = async () =>{
+        const getAdmins = await axios.get(`${this.state.server}/getSavedAdmins`);
+        this.setState({
+          allAdmins: getAdmins.data
+        })
+    
+      }
+
       loggingIn = (event) => {
         event.preventDefault();
-        if (
-          this.state.registerPassword == this.state.loginPassword &&
-          this.state.loginUsername == this.state.registerUsername
-        ) {
+        let exist = 'n';
+        this.state.allAdmins.map(element=>{
+          if ((this.state.loginPassword === element.password && this.state.loginUsername === element.username) && (this.state.loginUsername!='' && this.state.loginPassword != ''))
+          {
+            exist = 'y'
+            
+          }
+        })
+        if (exist==='y') {
           this.setState({
             showRegister: false,
             showLogin: false,
             isAuthenticated: true,
           });
-        } else alert("Incorrect username and/or passowrd");
-      };
     
-      sendFund = async (data) => {
-        const sendTheFund = await axios.post(
-          `${this.state.server}/sendTheFund`,
-          data
-        );
-      };
+        }
+        else{
+          alert('Incorrect username and/or passowrd ')
+        }
+      }
     
-      SaveProjectOwner = async (data) => {
-        this.setState({
-          showRegister: false,
-          showLogin: true,
-        });
-        const addOwner = await axios.post(
-          `${this.state.server}/savePojectOwner`,
-          data
-        );
-      };
+
+
+
+
+
+
+
+
+      
+      // SaveProjectOwner = async (data) => {
+      //   this.setState({
+      //     showRegister: false,
+      //     showLogin: true,
+      //   });
+      //   const addOwner = await axios.post(
+      //     `${this.state.server}/savePojectOwner`,
+      //     data
+      //   );
+      // };
     
       render() {
         return (
@@ -115,7 +164,7 @@ class Admin extends React.Component {
                     getEmail={this.getEmail}
                     getRegisterUsername={this.getRegisterUsername}
                     showLoginFunc={this.showLoginFunc}
-                    SaveProjectOwner={this.SaveProjectOwner}
+                    SaveAdmin={this.SaveAdmin}
                     registerUsername={this.state.registerUsername}
                   />
                 )}
@@ -134,7 +183,7 @@ class Admin extends React.Component {
                 )}
               </div>
               {this.state.isAuthenticated && (
-                <AuthenticatedAdmin sendFund={this.sendFund} />
+                <AuthenticatedAdmin />
               )}
             </div>
           </>
