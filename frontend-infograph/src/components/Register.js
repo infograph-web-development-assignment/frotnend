@@ -112,8 +112,6 @@ class Register extends React.Component {
     }
   }
 
-
-
   SaveProjectOwner = async (data) => {
     this.setState({
       showRegister: false,
@@ -125,6 +123,7 @@ class Register extends React.Component {
     );
   };
 
+  
   
   render() {
     return (
