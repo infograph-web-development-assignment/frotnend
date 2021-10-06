@@ -10,6 +10,7 @@ import Status from "./components/Status";
 import Admin from "./components/Admin";
 import AdminLogin from "./components/AdminLogin";
 import AdminRegister from "./components/AdminRegister";
+import AuthenticatedAdmin from "./components/AuthenticatedAdmin";
 
 class App extends React.Component {
   render() {
@@ -46,7 +47,7 @@ class App extends React.Component {
             </Route>
 
             <Route exact path='/isauthenticated'>
-              <Authenticated />
+              <AuthenticatedAdmin />
             </Route>
           </Switch>
         </BrowserRouter>

@@ -4,6 +4,8 @@ import AdminRegister from "./AdminRegister";
 import AdminLogin from "./AdminLogin";
 import axios from "axios";
 import AuthenticatedAdmin from "./AuthenticatedAdmin";
+import ToolBar from "./ToolBar";
+import Footer from "./Footer";
 
 class Admin extends React.Component {
     constructor(props) {
@@ -69,24 +71,8 @@ class Admin extends React.Component {
       getLoginPassword = (event) => {
         this.setState({ loginPassword: event.target.value });
       };
-    
-      // loggingIn = (event) => {
-      //   event.preventDefault();
-      //   if (
-      //     this.state.registerPassword === this.state.loginPassword &&
-      //     this.state.loginUsername === this.state.registerUsername
-      //   ) {
-      //     this.setState({
-      //       showRegister: false,
-      //       showLogin: false,
-      //       isAuthenticated: true,
-      //     });
-      //   } else alert("Incorrect username and/or passowrd");
-      // };
 
-
-
-
+      //To save admin in DAtabase
       SaveAdmin = async (data) => {
         this.setState({
           showRegister: false,
@@ -131,31 +117,11 @@ class Admin extends React.Component {
         }
       }
     
-
-
-
-
-
-
-
-
-      
-      // SaveProjectOwner = async (data) => {
-      //   this.setState({
-      //     showRegister: false,
-      //     showLogin: true,
-      //   });
-      //   const addOwner = await axios.post(
-      //     `${this.state.server}/savePojectOwner`,
-      //     data
-      //   );
-      // };
-    
       render() {
         return (
-          <>
-            <div>
-              <div>
+          <div style={{backgroundImage:'url(https://i1.wp.com/www.alphr.com/wp-content/uploads/2017/10/what_is_seed_funding-scaled.jpg?zoom=2&resize=738%2C320&ssl=1'}}>
+<ToolBar/>
+              <div style={{ width:'700px',marginLeft:'30%', marginRight:'50%'}}>
                 {this.state.showRegister && (
                   <AdminRegister
                     registerPassword={this.state.registerPassword}
@@ -185,8 +151,8 @@ class Admin extends React.Component {
               {this.state.isAuthenticated && (
                 <AuthenticatedAdmin />
               )}
-            </div>
-          </>
+              <Footer/>
+          </div>
         );
       }
 }

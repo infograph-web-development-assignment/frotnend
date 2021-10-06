@@ -6,7 +6,6 @@ class Authenticated extends React.Component {
   render() {
     return (
       <>
-        <Header />
         <UserForm  />
       </>
     );
