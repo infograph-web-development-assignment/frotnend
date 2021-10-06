@@ -2,12 +2,12 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import RegisterForm from "./RegisterForm";
 import Login from "./Login";
-import Authenticated from "./Authenticated";
 import axios from "axios";
 import ToolBar from "./ToolBar";
 import Footer from "./Footer";
 import NavBar from "./NavBar";
 import Status from "./Status";
+import UserForm from "./UserForm";
 
 class Register extends React.Component {
   constructor(props) {
@@ -190,7 +190,7 @@ class Register extends React.Component {
             )}
           </div>
           {this.state.isAuthenticated && (
-            <Authenticated />
+            <UserForm />
           )}
         </div>
         <Footer/>

@@ -1,9 +1,5 @@
 import axios from "axios";
 import React, { Component } from "react";
-import Header from "./Header";
-import NavBar from "./NavBar";
-import ToolBar from "./ToolBar";
-
 import { Card } from "react-bootstrap";
 class Status extends Component {
   constructor(props) {
@@ -24,29 +20,28 @@ class Status extends Component {
   render() {
     return (
       <>
-      
-
         <div>
-          <h2 style={{color:'white'}}>Data status</h2>
-          <div className='row' >
-          {this.state.resultArr.map((element) => {
-            return (
-              <div className='col' style={{padding:'10px'}}>
-              <Card style={{ width: "18rem" }}>
-                <Card.Body>
-                  <Card.Title>Project name: {element.projectName}</Card.Title>
-                  <Card.Subtitle className='mb-2 text-muted'>
-                    Project status: {element.status}
-                  </Card.Subtitle>
-                  <Card.Text>Projetc sector: {element.sector}</Card.Text>
-                  <Card.Text>
-                    Project Description: {element.description}
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-              </div>
-            );
-          })}
+          <div className='row'>
+            {this.state.resultArr.map((element) => {
+              return (
+                <div className='col' style={{ padding: "10px" }}>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Body>
+                      <Card.Title>
+                        Project name: {element.projectName}
+                      </Card.Title>
+                      <Card.Subtitle className='mb-2 text-muted'>
+                        Project status: {element.status}
+                      </Card.Subtitle>
+                      <Card.Text>Projetc sector: {element.sector}</Card.Text>
+                      <Card.Text>
+                        Project Description: {element.description}
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </div>
+              );
+            })}
           </div>
         </div>
       </>
