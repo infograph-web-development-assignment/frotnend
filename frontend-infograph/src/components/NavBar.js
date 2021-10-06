@@ -1,16 +1,22 @@
 import React, { Component } from "react";
-import { Navbar, Container } from "react-bootstrap";
+import { Navbar, Container,Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class NavBar extends Component {
+  
+  clicker = ()=>{
+    console.log('licker clicker')
+  }
+  
   render() {
     return (
       <>
-        <div>
-          <Navbar collapseOnSelect expand='lg'>
-            <Container>
-              <div style={{ padding: "" }}>
-                <Navbar.Text style={{ color: "white", padding: "10px" }}>
+      <div style={{background:'white'}}>
+        
+          <Navbar   collapseOnSelect expand='lg'>
+            <Container  >
+              <div >
+                <Navbar.Text style={{ color: "white"}}>
                   {" "}
                   <img
                     src='https://mail.google.com/mail/u/1?ui=2&ik=6488739f8a&attid=0.2&permmsgid=msg-f:1712335054757495286&th=17c36fa8f34501f6&view=att&disp=safe' alt=''
@@ -18,49 +24,38 @@ class NavBar extends Component {
                   />{" "}
                 </Navbar.Text>
 
-                <Navbar.Text style={{ padding:'80px' }}>
-                  <a href='/isauthenticated'>
+                <Navbar.Text style={{ marginLeft:'150px' , padding:'30px' }} >
+                  
                     {" "}
-                    <b>Home</b>
-                  </a>
+                    <button style={{  background:"transparent", color: "black", borderBlockColor:"black",fontFamily: "'Dancing Script', cursive",fontSize:"15px", border:'none'}} onClick={this.props.forHome} ><b>Home</b> </button>
+                  
                 </Navbar.Text>
 
-                <Navbar.Text style={{ padding: "20px" }}>
-                  <a href='/status'>
+                <Navbar.Text style={{ padding: "10px" }}>
+
                     {" "}
-                    <b>Status</b>
-                  </a>
+                   <button style={{  background:"transparent", color: "black", borderBlockColor:"black",fontFamily: "'Dancing Script', cursive",fontSize:"15px", border:'none'}} onClick={this.props.forStatus}> <b>Status</b> </button>
+
                 </Navbar.Text>
 
-                <Navbar.Text style={{ padding: "20px" }}>
+                <Navbar.Text style={{ padding: "10px" }}>
                   <select style={{ border: "none" }}>
                     <option value='Blog'>Blog</option>
                     <option value='Second'>Second</option>
                   </select>
                 </Navbar.Text>
 
-                <Navbar.Text style={{ padding: "20px" }}>
-                  <select style={{ border: "none" }}>
-                    <option value='Portfolio'>Portfolio</option>
-                    <option value='Second'>Second</option>
-                  </select>
-                </Navbar.Text>
 
-                <Navbar.Text style={{ padding: "20px" }}>
+
+                <Navbar.Text style={{ padding: "10px" }}>
                   <select style={{ border: "none" }}>
                     <option value='Pages'>Pages</option>
                     <option value='Second'>Second</option>
                   </select>
                 </Navbar.Text>
 
-                <Navbar.Text style={{ padding: "20px" }}>
-                  <select style={{ border: "none" }}>
-                    <option value='Features'>Features</option>
-                    <option value='Second'>Second</option>
-                  </select>
-                </Navbar.Text>
 
-                <Navbar.Text style={{ padding: "20px" }}>
+                <Navbar.Text style={{ padding: "10px" }}>
                   <b>Contact</b>
                 </Navbar.Text>
 
@@ -74,7 +69,8 @@ class NavBar extends Component {
               </div>
             </Container>
           </Navbar>
-        </div>
+
+      </div>
       </>
     );
   }

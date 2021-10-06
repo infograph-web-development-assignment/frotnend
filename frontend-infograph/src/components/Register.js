@@ -4,6 +4,10 @@ import RegisterForm from "./RegisterForm";
 import Login from "./Login";
 import Authenticated from "./Authenticated";
 import axios from "axios";
+import ToolBar from "./ToolBar";
+import Footer from "./Footer";
+import NavBar from "./NavBar";
+import Status from "./Status";
 
 class Register extends React.Component {
   constructor(props) {
@@ -20,7 +24,9 @@ class Register extends React.Component {
       loginPassword: "",
       isAuthenticated: false,
       savedData: "",
-      allProjectOwners:[]
+      allProjectOwners:[],
+      showStatusPage:false,
+      showNav:false
     };
   }
 
@@ -71,16 +77,9 @@ class Register extends React.Component {
   };
 
 
-
-
-
-
-
-
-
-
-
-
+  //
+  // For project owners
+ //
   componentDidMount = async () =>{
     const getProjectOwners = await axios.get(`${this.state.server}/getSavedProjectOwners`);
     this.setState({
@@ -104,6 +103,8 @@ class Register extends React.Component {
         showRegister: false,
         showLogin: false,
         isAuthenticated: true,
+        showStatusPage:false,
+        showNav:true
       });
 
     }
@@ -116,6 +117,8 @@ class Register extends React.Component {
     this.setState({
       showRegister: false,
       showLogin: true,
+      showStatusPage:false,
+      isAuthenticated:false
     });
     const addOwner = await axios.post(
       `${this.state.server}/savePojectOwner`,
@@ -124,11 +127,41 @@ class Register extends React.Component {
   };
 
   
+  forHome = () =>{
+    this.setState({
+      isAuthenticated:true,
+      showRegister:false,
+      showLogin:false,
+      showStatusPage:false,
+      showNav:true
+    })
+  }
+
+  forStatus = () =>{
+    this.setState({
+      isAuthenticated:false,
+      showRegister:false,
+      showLogin:false,
+      showStatusPage:true,
+      showNav:true
+    })
+  }
+
   
   render() {
     return (
-      <>
-        <div style={{backgroundImage:'url(https://i1.wp.com/www.alphr.com/wp-content/uploads/2017/10/what_is_seed_funding-scaled.jpg?zoom=2&resize=738%2C320&ssl=1)',height:'150px', width:'1000px'}}>
+      <div style={{backgroundImage:'url(https://i1.wp.com/www.alphr.com/wp-content/uploads/2017/10/what_is_seed_funding-scaled.jpg?zoom=2&resize=738%2C320&ssl=1'}}>
+      <ToolBar/>
+      {this.state.showNav && <NavBar
+        forHome={this.forHome}
+        forStatus={this.forStatus}
+        
+        />}
+        {this.state.showStatusPage && <Status/>}
+
+        
+
+        <div style={{ width:'700px',marginLeft:'30%', marginRight:'50%'}}>
           <div>
             {this.state.showRegister && (
               <RegisterForm
@@ -160,7 +193,8 @@ class Register extends React.Component {
             <Authenticated />
           )}
         </div>
-      </>
+        <Footer/>
+      </div>
     );
   }
 }

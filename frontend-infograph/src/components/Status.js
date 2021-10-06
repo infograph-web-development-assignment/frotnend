@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { Component } from "react";
 import Header from "./Header";
+import NavBar from "./NavBar";
+import ToolBar from "./ToolBar";
 
 import { Card } from "react-bootstrap";
 class Status extends Component {
@@ -22,14 +24,14 @@ class Status extends Component {
   render() {
     return (
       <>
-        <div>
-          <Header />
-        </div>
+      
 
         <div>
-          <h2>Data status</h2>
+          <h2 style={{color:'white'}}>Data status</h2>
+          <div className='row' >
           {this.state.resultArr.map((element) => {
             return (
+              <div className='col' style={{padding:'10px'}}>
               <Card style={{ width: "18rem" }}>
                 <Card.Body>
                   <Card.Title>Project name: {element.projectName}</Card.Title>
@@ -42,8 +44,10 @@ class Status extends Component {
                   </Card.Text>
                 </Card.Body>
               </Card>
+              </div>
             );
           })}
+          </div>
         </div>
       </>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import StartupHeader from "./StartupHeader";
+import Footer from "./Footer";
 class Startup extends Component {
   render() {
     return (
@@ -7,7 +8,7 @@ class Startup extends Component {
         <>
         <StartupHeader/>
 
-          <div style={{marginLeft:'40%', marginRight:'50%' , background:'', width:'400px', padding:'40px', color:'white' }} >
+          <div style={{marginLeft:'30%', marginRight:'50%' , background:'', width:'400px', padding:'40px', color:'white' }} >
           
           <div style={{padding:'30px'}}>
           <button  style={{  padding:'40px', background:'#082032', color: "white", borderBlockColor:"black",fontFamily: "'Dancing Script', cursive",fontSize:"30px", width:'400px' }}  >
@@ -24,6 +25,7 @@ class Startup extends Component {
           
           </div>
         </>
+  
       </div>
     );
   }

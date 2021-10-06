@@ -5,13 +5,6 @@ class Header extends Component {
   render() {
     return (
       <>
-        <div>
-          <ToolBar />
-        </div>
-
-        <div>
-          <NavBar />
-        </div>
       </>
     );
   }
